@@ -1,8 +1,7 @@
 {
   "name": "Go Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/go:1.23",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
   "forwardPorts": [8080],
   "postCreateCommand": "go mod download && go install github.com/air-verse/air@v1.61.7 && curl -fsSL https://claude.ai/install.sh | bash && git config core.hooksPath .githooks",
