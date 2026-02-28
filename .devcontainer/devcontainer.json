@@ -5,7 +5,7 @@
     "ghcr.io/devcontainers/features/node:1": {}
   },
   "forwardPorts": [8080],
-  "postCreateCommand": "go mod download && curl -fsSL https://claude.ai/install.sh | bash",
+  "postCreateCommand": "go mod download && go install github.com/air-verse/air@v1.61.7 && curl -fsSL https://claude.ai/install.sh | bash",
   "customizations": {
     "vscode": {
       "extensions": [
