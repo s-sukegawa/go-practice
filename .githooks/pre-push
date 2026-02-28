@@ -1,0 +1,10 @@
+#!/bin/sh
+
+unformatted=$(gofmt -l .)
+if [ -n "$unformatted" ]; then
+  echo "以下のファイルがフォーマットされていません:"
+  echo "$unformatted"
+  echo ""
+  echo "実行してください: gofmt -w ."
+  exit 1
+fi

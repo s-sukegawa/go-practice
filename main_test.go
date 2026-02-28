@@ -9,10 +9,10 @@ import (
 
 func TestHelloHandler(t *testing.T) {
 	tests := []struct {
-		name           string
-		path           string
-		wantStatus     int
-		wantBody       string
+		name            string
+		path            string
+		wantStatus      int
+		wantBody        string
 		wantContentType string
 	}{
 		{
