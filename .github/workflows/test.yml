@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-go@v5
-        with:
-          go-version-file: go.mod
+      - name: Build dev image
+        run: docker build -t go-hello-server-dev .devcontainer
 
-      - run: go test ./...
+      - name: Run tests
+        run: docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace go-hello-server-dev go test ./...
